@@ -1,0 +1,20 @@
+<div class="container">
+
+  <!-- File input -->
+  <h2>Enter CSV-file for parsing:</h2>
+  <input type="file" id="file" name="file"/>
+  <button ng-click="add()">Add</button>
+  <button ng-click="refreshEmployees()">Refresh employees</button>
+  <button ng-click="printWorkshifts()">Print workshifts</button>
+
+  <br></br>
+  <h3>List of employees</h3>
+  <table>
+    <tr ng-repeat="employee in employees | orderBy:'employeeNumber'">
+      <td>{{ employee.employeeNumber }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.getMonthlyWage() | currency : "$" : 2 }}</td>
+    </tr>
+  </table>
+
+</div>
