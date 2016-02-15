@@ -12,6 +12,7 @@
 
   $scope.parseFile = function() {
     try {
+      $scope.errorMessage = '';
       /* Updates the list of employees after reader is done */
       setTimeout(function() {
         $scope.$apply(function () {
@@ -21,7 +22,8 @@
       csvParser.parse($scope.employees);
     }
     catch(err) {
-      $log.debug('An error happened loading the file.');
+      $scope.errorMessage = 'Choose a file before parsing.';
+      $log.error('Cannot parse null file.');
     }
   };
 

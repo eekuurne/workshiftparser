@@ -20,6 +20,7 @@ angular
     'LocalStorageModule'
   ])
 
+  /* Currently not used */
   .config(['localStorageServiceProvider', function(localStorageServiceProvider){
     localStorageServiceProvider.setPrefix('ls');
   }])
