@@ -11,12 +11,17 @@ Refresh page to reset the list.
 Person Name, Person ID, Date, Start, End
 
 Person Name => Textual Name of the Employee 
-Person ID => Unique ID of the Employee
-Date => DD.MM.YYYY, Work Shift Date
-Start => HH:MM, Shift Start Time (24h)
-End => HH:MM, Shift End Time (24h)
+
+Person ID 	=> Unique ID of the Employee
+
+Date 		=> DD.MM.YYYY, Work Shift Date
+
+Start 		=> HH:MM, Shift Start Time (24h)
+
+End 		=> HH:MM, Shift End Time (24h)
 
 Example Data Row:
+
 John Smith,8,26.3.2014,13:15,2:00
 
 ## Build & development
