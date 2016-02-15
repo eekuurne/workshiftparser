@@ -20,7 +20,9 @@ angular.module('workshiftparserApp')
     return (this.endingTime - this.startingTime)/1000/60;
   };
 
-  /* Counts the minutes for evening compensation (refactor later) */
+  /**
+   * Counts the minutes for evening compensation (refactor later) 
+   */
   Workshift.prototype.getEveningMinutes = function () {
     var eveningMinutes = 0;
 
@@ -39,7 +41,7 @@ angular.module('workshiftparserApp')
       eveningMinutes += (eveningEnd - eveningStart)/1000/60;
     }
 
-    /* Count the compensation from early morning hours */
+    /* Count the compensation for early morning hours */
     var morningStart = createDateObject(this.date, '00:00');
     var morningEnd = createDateObject(this.date, '06:00');
 
@@ -53,6 +55,9 @@ angular.module('workshiftparserApp')
     return eveningMinutes;
   };
 
+  /**
+   * Creates a new Date object from 2 parameters: dd.MM.yyyy and hh:mm
+  */
   function createDateObject(date, time) {
     var splittedDate = date.split('.');
     var splittedTime = time.split(':');

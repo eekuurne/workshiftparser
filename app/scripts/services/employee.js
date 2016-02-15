@@ -61,6 +61,9 @@ angular.module('workshiftparserApp')
     return Math.round(monthlyWage) / 100;
   };
 
+  /**
+   * Counts the wage from given minutes, taking overtime into account
+  */
   Employee.prototype.countWageOfDay = function (minutes) {
     var wage = 0;
     if (minutes > 480) {
@@ -86,12 +89,18 @@ angular.module('workshiftparserApp')
     return this.workshifts;
   };
 
+  /**
+   * Prints workshifts to the console for debugging
+  */
   Employee.prototype.printWorkshifts = function () {
     for (var i = 0; i < this.workshifts.length; i++) {
       $log.debug(this.employeeNumber + ', ' + this.workshifts[i].date + ' ' + this.workshifts[i].startingTime + ' - ' + this.workshifts[i].endingTime + ' ' + this.workshifts[i].getMinutes() + ' ' + this.workshifts[i].getEveningMinutes());
     }
   };
 
+  /**
+   * Prints daily to the console for debugging
+  */
   Employee.prototype.printDailyMinutes = function () {
     for (var i = 0; i < this.dailyMinutes.length; i++) {
       $log.debug(this.dailyMinutes[i].date + ': ' + this.dailyMinutes[i].minutes);

@@ -11,6 +11,7 @@
   </button>
 
   <h3>List of employees</h3>
+  <input type="text" placeholder="Filter by name" ng-model="employeeFilter.name"/>
   <table class="table">
     <thead>
       <tr>
@@ -20,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="employee in employees | orderBy:'employeeNumber'">
+      <tr ng-repeat="employee in employees | filter: employeeFilter | orderBy:'employeeNumber'">
         <td>{{ employee.employeeNumber }}</td>
         <td>{{ employee.name }}</td>
         <td>{{ employee.getMonthlyWage() | currency : "$" : 2 }}</td>

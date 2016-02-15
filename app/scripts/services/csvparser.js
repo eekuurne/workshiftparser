@@ -17,8 +17,8 @@ angular.module('workshiftparserApp')
     employees = employeesFromScope;
 
     /* File to string */
-    var f = document.getElementById('file').files[0],
-    reader = new FileReader();
+    var f = document.getElementById('file').files[0];
+    var reader = new FileReader();
     reader.onloadend = function(e){
       var fileAsString = e.target.result;
 
@@ -44,6 +44,7 @@ angular.module('workshiftparserApp')
           }
         }
       }
+      f.value = '';
     };
     reader.readAsBinaryString(f);
   };
