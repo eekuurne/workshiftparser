@@ -15,6 +15,10 @@ angular.module('workshiftparserApp')
     this.dailyMinutes = [];
   }
 
+  /** 
+   * Adds workshift to the list of workshifts if it doesn't exist yet and adds the minutes from
+   * the workshift to the dailyminutes so overtime compensations can be calculated properly.
+   */
   Employee.prototype.addWorkshift = function (workshift) {
     var contains = false;
     for (var i = 0; i < this.workshifts.length; i++) {
@@ -40,22 +44,9 @@ angular.module('workshiftparserApp')
     }
   };
 
-  Employee.prototype.getWorkshifts = function () {
-    return this.workshifts;
-  };
-
-  Employee.prototype.printWorkshifts = function () {
-    for (var i = 0; i < this.workshifts.length; i++) {
-      $log.debug(this.employeeNumber + ', ' + this.workshifts[i].date + ' ' + this.workshifts[i].startingTime + ' - ' + this.workshifts[i].endingTime + ' ' + this.workshifts[i].getMinutes() + ' ' + this.workshifts[i].getEveningMinutes());
-    }
-  };
-
-  Employee.prototype.printDailyMinutes = function () {
-    for (var i = 0; i < this.dailyMinutes.length; i++) {
-      $log.debug(this.dailyMinutes[i].date + ': ' + this.dailyMinutes[i].minutes);
-    }
-  };
-
+  /**
+   * Counts the monthly wage from the workshifts, taking into account overtime and evening compensations.
+  */
   Employee.prototype.getMonthlyWage = function () {
     var monthlyWage = 0;
 
@@ -89,6 +80,22 @@ angular.module('workshiftparserApp')
       wage += minutes / 60.0 * this.hourlyWage;
     }
     return wage; 
+  };
+
+  Employee.prototype.getWorkshifts = function () {
+    return this.workshifts;
+  };
+
+  Employee.prototype.printWorkshifts = function () {
+    for (var i = 0; i < this.workshifts.length; i++) {
+      $log.debug(this.employeeNumber + ', ' + this.workshifts[i].date + ' ' + this.workshifts[i].startingTime + ' - ' + this.workshifts[i].endingTime + ' ' + this.workshifts[i].getMinutes() + ' ' + this.workshifts[i].getEveningMinutes());
+    }
+  };
+
+  Employee.prototype.printDailyMinutes = function () {
+    for (var i = 0; i < this.dailyMinutes.length; i++) {
+      $log.debug(this.dailyMinutes[i].date + ': ' + this.dailyMinutes[i].minutes);
+    }
   };
 
   return Employee;

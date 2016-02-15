@@ -7,23 +7,22 @@
 angular.module('workshiftparserApp')
   .factory('CSVParserFactory', ['Employee', 'Workshift', function (Employee, Workshift) {
 
-  function CSVParserFactory() {
-  }
+  /* Empty constructor */
+  function CSVParserFactory() {}
 
   var employees = [];
 
-  /* (Will refactor this method to consists of multiple functions: fileToString, stringToArray and
-   * arrayToEmployees, but the button needed multiple presses to do everything and I haven't found
-   * a solution yet) */
+  /* Will refactor this when I can figure out how the reader.onloadend allows it */
   CSVParserFactory.prototype.parse = function(employeesFromScope) {
     employees = employeesFromScope;
+
     /* File to string */
     var f = document.getElementById('file').files[0],
     reader = new FileReader();
     reader.onloadend = function(e){
       var fileAsString = e.target.result;
 
-      /* String to array */
+      /* String to array of employees */
       var lineContent, line;
       var lines = fileAsString.split('\n');
       for (var i = 0; i < lines.length; i++) {

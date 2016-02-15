@@ -1,11 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name workshiftparserApp.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the workshiftparserApp
+ * Controller of the About-page
  */
 angular.module('workshiftparserApp')
   .controller('AboutCtrl', [function () {

@@ -1,11 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name workshiftparserApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the workshiftparserApp
+ * Main controller of the workshiftparserApp module
  */
  angular.module('workshiftparserApp')
   .controller('MainCtrl', ['$scope', 'CSVParserFactory', function ($scope, CSVParserFactory) {
@@ -14,22 +10,18 @@
 
   $scope.employees = [];
 
-  $scope.addEmployee = function(employee) {
-    $scope.employees.push(employee);
-  };
-
-  $scope.add = function() {
-    csvParser.parse($scope.employees);
+  $scope.parseFile = function() {
+    try {
+      $scope.fileError = '';
+      csvParser.parse($scope.employees);
+    }
+    catch(err) {
+      $scope.fileError = 'Upload a file first!';
+    }
   };
 
   $scope.refreshEmployees = function() {
     $scope.employees = csvParser.getEmployees();
-  };
-
-  $scope.printWorkshifts = function() {
-    for (var i = $scope.employees.length - 1; i >= 0; i--) {
-      $scope.employees[i].printDailyMinutes();
-    }
   };
 
 }]);
