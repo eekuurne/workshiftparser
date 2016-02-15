@@ -5,7 +5,8 @@ version 0.15.1.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt` for building and `grunt serve` for preview. dist-folder has the latest build, where you
+can open the app with index.html.
 
 ## Testing
 

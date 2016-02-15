@@ -3,9 +3,12 @@
   <!-- File input -->
   <h2>Enter CSV-file for parsing:</h2>
   <input type="file" id="file" name="file"/>
-  <button ng-click="parseFile()">Parse file</button>
-  <button ng-click="refreshEmployees()">Refresh employees</button>
-  <div>{{ fileError }}</div>
+  <button ng-click="parseFile()">
+    Parse file
+  </button>
+  <button ng-click="refreshEmployees()">
+    <span class="glyphicon glyphicon-refresh"></span>
+  </button>
 
   <h3>List of employees</h3>
   <table class="table">
