@@ -10,25 +10,13 @@ Refresh page to reset the list.
 
 Person Name, Person ID, Date, Start, End
 
-Person Name => Textual Name of the Employee 
-
-Person ID 	=> Unique ID of the Employee
-
-Date 		=> DD.MM.YYYY, Work Shift Date
-
-Start 		=> HH:MM, Shift Start Time (24h)
-
-End 		=> HH:MM, Shift End Time (24h)
-
-Example Data Row:
-
-John Smith,8,26.3.2014,13:15,2:00
+![alt tag](https://github.com/eekuurne/workshiftparser/blob/master/app/images/data_example.png)
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview. 
+Run `npm install` and `bower install` before using grunt for the first time.
 
-Latest build is in the dist folder, where you can open the app with index.html.
+Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing
 
