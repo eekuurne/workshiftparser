@@ -20,7 +20,7 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  margin-bottom: 75px;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -33,30 +33,25 @@ body {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
+  color: #9d9d9d;
   border-top: 1px solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #222222;
 }
 
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.btn-count-wages {
+  margin-top: 10px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.filter-wrapper {
+  padding-left: 0;
 }
 
 /* The site won't show incomplete elements while loading scripts if they have the ng-cloak directive */
@@ -76,13 +71,5 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
